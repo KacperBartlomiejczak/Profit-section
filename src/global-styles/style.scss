@@ -1,0 +1,161 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	background-color: #fff;
+	font-family: "Montserrat", sans-serif;
+	color: var(--color-primary);
+}
+
+p {
+	color: var(--color-on-surface);
+}
+
+.profs {
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+
+	&__card {
+		width: 380px;
+		height: 380px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		justify-self: center;
+		align-items: flex-start;
+		background-color: $first-card;
+		border-radius: 12px;
+		margin: 1em 0;
+		&:nth-child(2) {
+			background-color: $second-card;
+		}
+		&:nth-child(3) {
+			background-color: $third-card;
+		}
+	}
+	&__heading {
+		font-size: 2.6rem;
+		margin-left: 0.7em;
+		margin-bottom: 0.5em;
+		font-weight: 600;
+		letter-spacing: 0px;
+	}
+
+	&__text {
+		width: 320px;
+		justify-self: start;
+		margin: 0 0 1em 2em;
+		font-size: 1.2rem;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: -3%;
+	}
+	&__btn {
+		height: 50px;
+		width: 150px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: 1.5em;
+		background-color: $white;
+		border-radius: 25px;
+		font-size: 1.2rem;
+		text-decoration: none;
+		color: $black;
+		transition: color 0.3s, background-color 0.3s;
+		img {
+			margin-left: 0.2em;
+		}
+		&:hover {
+			color: $main-color;
+		}
+		&:focus {
+			background-color: $second-card;
+			color: $main-color;
+		}
+	}
+	&__3d-icon {
+		background-color: $primary-color;
+	}
+	&__user {
+		background-color: $main-color;
+	}
+	&__stats {
+		background-color: $thirdly-color;
+	}
+	&__3d-icon,
+	&__user,
+	&__stats {
+		width: 50px;
+		height: 50px;
+		margin-left: 1.5em;
+		padding: 1em;
+		border-radius: 50%;
+		color: white;
+	}
+}
+
+@media (min-width: 768px) {
+	.profs {
+		&__card {
+			width: 700px;
+			height: 300px;
+		}
+		&__text {
+			width: 90%;
+		}
+		&__heading {
+			font-size: 3.2rem;
+			margin-left: 0.7em;
+		}
+		&__3d-icon,
+		&__user,
+		&__stats {
+			margin-left: 2em;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.profs {
+		display: flex;
+		&__card {
+			width: 380px;
+			height: 410px;
+			grid-row: 2/3;
+			justify-content: center;
+
+			margin-right: 2em;
+		}
+		&__btn {
+			margin-top: 2em;
+		}
+		&__3d-icon,
+		&__user,
+		&__stats {
+			width: 60px;
+			height: 60px;
+			margin-left: 2em;
+		}
+	}
+}
